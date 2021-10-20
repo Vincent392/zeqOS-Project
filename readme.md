@@ -1,3 +1,3 @@
-### zeqOS Linux Project
+### zeqOS Project
 
-The zeqOS Linux project is based on a PPTOS called zeqOS. 
+The zeqOS project is based on a PPTOS called zeqOS. 
