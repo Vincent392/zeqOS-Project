@@ -18,8 +18,8 @@ will probably not be supported.
 
 ## Want to contribute to the project?
 It's quite small right now, Any help would be amazing for us!
-Join our Discord server to contribute:
-https://discord.gg/2SjHdCpwx6
+Join our Discord server to contribute to the Extension:
+https://discord.gg/qDKCtr2rPE
 
 Ask what you can do to help! You can try helping with the Kernel, UI, App Ideas, anything!
 
