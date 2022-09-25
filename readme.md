@@ -25,3 +25,4 @@ Ask what you can do to help! You can try helping with the Kernel, UI, App Ideas,
 
 - This description was written by one of the discord server members, **swordcube**.
 - and now it's canceled cus Rohan was a dingus -Vincent
+- New OS Extension 16.05 Don't tell Rohan!
