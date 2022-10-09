@@ -1,0 +1,10 @@
+Do not download this file. 
+ALL STEPS MUST BE PERFORMED ON A LINUX MACHINE
+
+0. Download all the files except this one. Dont forget to download message.txt. Then group the downloaded files into one folder.
+1. Open a terminal in the directory of the files that were downloaded.
+2. Install make, nasm and qemu-system-x86 in the terminal. (sudo apt install)
+3. Type in make into the terminal.
+4. After that, type qemu_system_x86-64 -hda ./boot.bin 
+(If it shows error failed to load sector then you forgot to download the message.txt f
+5. To customize the prompt edit the message.txt file. After re run make then go back to step 4.
