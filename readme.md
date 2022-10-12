@@ -15,6 +15,7 @@ zeqOS is based off of a **custom** kernel, Which means apps from other OSes such
 - **macOS**
 - **Linux**
 will probably not be supported.
+But, **BoneOS'S** Apps Will Be Supported.
 
 ## Want to contribute to the project?
 It's quite small right now, Any help would be amazing for us!
