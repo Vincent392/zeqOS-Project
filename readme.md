@@ -26,4 +26,5 @@ Ask what you can do to help! You can try helping with the Kernel, UI, App Ideas,
 
 - This description was written by one of the discord server members, **swordcube**.
 - New OS Extension 16.05 Don't tell Rohan!
-- Ps We got **kap** working on A LOT OF STUFF 32 bit switch a GUI and Apps.
+- PS. We got **Kap** working on A LOT OF STUFF 32 bit switch a GUI and Apps.
+- 32 Bit Kernel On The Way!
