@@ -1,0 +1,7 @@
+1: Keyboard Support
+2: Mouse Support
+3: VGA Graphics Mode
+4: MASSIVE CLEANUP
+5: GUI
+6: Apps
+7: Installer

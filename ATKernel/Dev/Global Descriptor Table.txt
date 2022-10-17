@@ -1,0 +1,15 @@
+********************************************
+	         GDT
+********************************************
+
+	  char = int8_t;
+	  unsigned char = uint8_t;
+	  short = int16_t;
+	  unsigned short = uint16_t;
+	  int = int32_t;
+	  unsigned int = uint32_t;
+	  long long int = int64_t;
+	  unsigned long long int = uint64_t;
+	
+	  const char* = string;
+	  uint32_t  =  size_t;
