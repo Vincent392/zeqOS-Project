@@ -7,7 +7,11 @@
 
 namespace ISR
 {
-	/* These are the software interrupts reserved by Intel for exceptions */
+	/* 
+		Welcome to the ISR, or Interrupt Service Routines.
+
+
+	 */
 	extern "C" void isr0();
 	extern "C" void isr1();
 	extern "C" void isr2();

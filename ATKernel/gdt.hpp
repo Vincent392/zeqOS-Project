@@ -22,6 +22,22 @@
 
 namespace GDT
 {
+	/* 
+		This is the GDT Entry Structure.
+		This defines each entry in the GDT.
+
+		How do I know this is what it's supposed to be? osdev wiki for the win!
+
+		The reason why it's packed, is because structs by default are aligned different.
+
+		See this for more information -> [https://en.wikipedia.org/wiki/Data_structure_alignment]
+
+		Packing the struct removes the alignment, and essentially "packs" the struct.
+
+		This is probably the worst explanation every, but oh well.
+
+		Here is the page on the osdev wiki about the GDT -> [https://wiki.osdev.org/GDT_Tutorial]
+	*/
 	struct [[gnu::packed]] GDTEntry
 	{
 		uint16_t limit;
@@ -31,6 +47,17 @@ namespace GDT
 		uint8_t granularity;
 		uint8_t base2;
 	};
+	/*
+		This is the GDT Descriptior, also known as the GDTR.
+
+		I basically just call it the GDT pointer, since this is the structure the 'lgdt' instruction expects.
+		The limit is the size of the GDT, and the base being the address of the GDT.
+
+		As per how the osdev wiki demonstates this -> [https://wiki.osdev.org/Global_Descriptor_Table]
+
+		Since this is 32-bit, we are using the 32-bit descriptor.
+
+	*/
 	struct [[gnu::packed]] GDTDescriptor
 	{
 		uint16_t limit;
