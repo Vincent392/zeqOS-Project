@@ -1,0 +1,20 @@
+There are bugs I am aware of:
+	puts() and putchar() doesn't work, only putchar_() and printf() works.
+
+Future changes:
+	I want the interrupt handler to pass in a POINTER, not the entire struct, this will be fixed tomorrow.
+	As of now, there is no double buffering.
+	Also, as of now, the screen is NOT able to scroll.
+	Also, the commenting is VERY sparse, I will comment more tomorrow to explain most of the code.
+	The code is very, glued together?? (by this I mean the code is very patchy and may be unstable)
+	I plan on fixing up the code tomorrow, for the sake of consistency.
+
+As for the compiler I used, I did change the Makefile, and the compiler I used was i686-elf-g++.
+Why did I use this? Because this is a cross compiler and it is great for osdev.
+
+Here is the link for instructions on how to install the cross compiler.
+https://wiki.osdev.org/GCC_Cross-Compiler
+
+If there are any questions regarded the changes I have made, please contact me on discord.
+xyve#5469
+
