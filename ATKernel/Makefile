@@ -1,32 +1,29 @@
-GCCPARAMS = -m32 -Iinclude -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore
-ASPARAMS = --32
-LDPARAMS = -melf_i386
+ASFLAGS=-f elf32
+CC=i686-elf-g++
+CPPFLAGS=-ffreestanding -Wall -Wextra -O2 -I./ -I./Libc/include -std=c++11 -fpermissive
+AS=nasm
 
-objects = loader.o gdt.o port.o interrupts.o kernel.o
+KERNEL=iso/boot/ZeqOSEXT.bin
+LDFLAGS ?= -T linker.ld -ffreestanding
+
+CPPFILES = $(shell find . -type f -name '*.cpp')
+OBJ = $(CPPFILES:.cpp=.o)
+
+ASFILES = $(shell find . -type f -name '*.asm')
+ASOBJ = $(ASFILES:.asm=.o)
+
+all: $(KERNEL)
+
+$(KERNEL): $(OBJ) $(ASOBJ)
+	$(CC) $(LDFLAGS) -o $@ $(ASOBJ) $(OBJ) -nostdlib -lgcc
+	grub-mkrescue -o ZeqOSEXT.iso iso
+	qemu-system-i386 -cdrom ZeqOSEXT.iso -serial stdio
 
 %.o: %.cpp
-	gcc $(GCCPARAMS) -c -o $@ $<
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
-%.o: %.s
-	as $(ASPARAMS) -o $@ $<
+%.o: %.asm
+	$(AS) $(ASFLAGS) $< -o $@
 
-ATKernel.bin: linker.ld $(objects)
-	ld $(LDPARAMS) -T $< -o $@ $(objects)
-	
-	
-# ISO
-ZeqOSEXT.iso: ATKernel.bin
-		
-		mkdir iso
-		mkdir iso/boot
-		mkdir iso/boot/grub
-		cp $< iso/boot/
-		echo 'set timeout=3' >> iso/boot/grub/grub.cfg
-		echo 'set default=0' >> iso/boot/grub/grub.cfg
-		echo '' >> iso/boot/grub/grub.cfg
-		echo 'menuentry "ZeqOS EXT x86" {' >> iso/boot/grub/grub.cfg
-		echo '	multiboot /boot/ATKernel.bin ' >> iso/boot/grub/grub.cfg
-		echo '	boot ' >> iso/boot/grub/grub.cfg
-		echo '}' >> iso/boot/grub/grub.cfg
-		grub-mkrescue --output=$@ iso
-		rm -rf iso
+clean:
+	rm -rf $(KERNEL) $(OBJ) $(ASOBJ) ZeqOSEXT.iso
