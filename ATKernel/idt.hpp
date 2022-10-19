@@ -1,5 +1,4 @@
-#ifndef IDT_HPP
-#define IDT_HPP
+#pragma once
 
 #include <stdint.h>
 #include <isr.hpp>
@@ -80,10 +79,6 @@ namespace IDT
 	};
 	
 	void init();
-	void setGate(uint8_t num, uint32_t base, uint16_t selector, uint8_t flags);
+	void setEntry(uint8_t num, uint32_t base, uint16_t selector, uint8_t flags);
 
-} // namespace table
-
-
-
-#endif
+}

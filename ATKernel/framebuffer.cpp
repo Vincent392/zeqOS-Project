@@ -63,12 +63,12 @@ namespace Graphics
 	{
 		if(ch == '\n')
 		{
-			point_x = 0;
-			point_y += 16;
+			x = 0;
+			y += 16;
 		}
 		else if(ch == '\r')
 		{
-			point_x = 0;
+			x = 0;
 		}
 		/*else if(ch == '\b')
 		{
@@ -87,21 +87,21 @@ namespace Graphics
 		}*/
 		else
 		{
-			if(point_x + 8 > width)
+			if(x + 8 > width)
 			{
-				point_x = 0;
-				point_y += 16;
-				drawChar(point_x, point_y, ch, color);
-				point_x += 8;
+				x = 0;
+				y += 16;
+				drawChar(x, y, ch, color);
+				x += 8;
 			}
-			else if (point_y + 16 > height)
+			else if (y + 16 > height)
 			{
 				// Handle this later
 			}
 			else
 			{
-				drawChar(point_x, point_y, ch, color);
-				point_x += 8;
+				drawChar(x, y, ch, color);
+				x += 8;
 			}
 		}
 	}
