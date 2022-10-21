@@ -1,5 +1,4 @@
-#ifndef ISR_HPP
-#define ISR_HPP
+#pragma once
 
 #include <stdint.h>
 #include <ports.hpp>
@@ -7,7 +6,12 @@
 
 namespace ISR
 {
-	/* These are the software interrupts reserved by Intel for exceptions */
+	/* 
+		Welcome to the ISR, or Interrupt Service Routines.
+
+		These are the functions that are defined as MACROS in the isrh.asm file.
+		They ae DECLARED here.
+	 */
 	extern "C" void isr0();
 	extern "C" void isr1();
 	extern "C" void isr2();
@@ -41,7 +45,12 @@ namespace ISR
 	extern "C" void isr30();
 	extern "C" void isr31();
 
-	/* Struct which aggregates many registers */
+	/*
+		Struct which aggregates many registers
+		If you look in isrh.asm in isr_common_stub, the CPU pushes many things onto the stack before calling the isrHandler function, which is defined in isr.cpp.
+		When you push things to the stack in Assembly and call a C/C++ function, it passes those parameters into whatever function it was calling.
+		A very crappy explanation.
+	*/
 	struct registers {
 		uint32_t ds; /* Data segment selector */
 		uint32_t edi, esi, ebp, esp, ebx, edx, ecx, eax; /* Pushed by pusha. */
@@ -52,8 +61,4 @@ namespace ISR
 	void init();
 	void installHandler(uint8_t num, void (*handler)(struct registers *));
 
-} // namespace Interrupts
-
-
-
-#endif
+}

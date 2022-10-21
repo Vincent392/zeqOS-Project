@@ -2,6 +2,9 @@
 
 namespace ISR
 {
+	/*
+		This is just a lookup table that corresponds the interrupts number with the correct string message.
+	*/
 	const char *ExceptionMessages[] = {
 		"Division By Zero",
 		"Debug",
@@ -39,14 +42,26 @@ namespace ISR
 		"Reserved",
 		"Reserved"
 	};
+	/*
+		This will be used for something else later.
+	*/
 	void init()
 	{
 
 	}
+	/*
+		This will be used for something else later.
+	*/
 	void installHandler(uint8_t num, void (*handler)(struct registers *))
 	{
 
 	}
+	/*
+		This is the handler.
+
+		This just prints the entirety if the register structure for debugging purposes.
+		After that, it just halts.
+	*/
 	extern "C" void isrHandler(struct registers r)
 	{
         printf("Exception: %s [%u]\n", ExceptionMessages[r.int_no], r.int_no);
