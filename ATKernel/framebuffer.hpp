@@ -17,7 +17,7 @@ namespace Graphics
 		I'm not even gonna lie, this entire class looks like shit.
 		I wrote this right as I was about to go to bed, so forgive me please.
 
-		If you're seeing this, I'll be rewriting this soon, so you know, it doesn't give someone eye cancer everytime they see it.
+		If you're seeing this, I'll be rewriting this soon, so you know, it doesn't give someone eye cancer every time they see it.
 	*/
 	/*
 		So, what is a framebuffer?
